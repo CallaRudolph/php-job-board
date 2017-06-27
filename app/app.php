@@ -62,9 +62,13 @@
                     <h3>Description:</h3>
                     <p>" . $my_posting->getDescription() . "</p>
                     <h3>Contact Info:</h3>
-                    <p>" . $my_contact_post->getName() . "</p>
-                    <p>" . $my_contact_post->getPhoneNumber() . "</p>
-                    <p>" . $my_contact_post->getEmail() . "</p>
+                    <ul>
+                        <li><h4>" . $my_contact_post->getName() . "</h4></li>
+                        <ul>
+                            <li>" . $my_contact_post->getPhoneNumber() . "</li>
+                            <li>" . $my_contact_post->getEmail() . "</li>
+                        </ul>
+                    </ul>
                 </div>
             </body>
         ";
