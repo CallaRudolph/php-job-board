@@ -32,7 +32,7 @@
 
     }
 
-    class contact_info
+    class Contact
         {
             private $name;
             private $phone_number;
@@ -42,7 +42,7 @@
             {
                 $this->name = $name;
                 $this->phone_number = $phone_number;
-                $this->email -> $email;
+                $this->email = $email;
             }
 
             // function setName($new_name)

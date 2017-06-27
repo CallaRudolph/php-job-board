@@ -26,8 +26,16 @@
                         <input id='description' name='description' class='form-control' type='text'>
                     </div>
                     <div class='form-group'>
-                        <label for='contact_info'>Enter the contact:</label>
-                        <input id='contact_info' name='contact_info' class='form-control' type='text'>
+                        <label for='name'>Enter the contact name:</label>
+                        <input id='name' name='name' class='form-control' type='text'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='phone'>Enter the contact phone:</label>
+                        <input id='phone' name='phone' class='form-control' type='number'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='email'>Enter the contact email:</label>
+                        <input id='email' name='email' class='form-control' type='text'>
                     </div>
                     <button type='submit' class='btn-danger'>Create!</button>
                 </form>
@@ -38,7 +46,8 @@
     });
 
     $app->get("/view_job_board", function() {
-        $my_posting = new JobOpening($_GET['title'], $_GET['description'], $_GET['contact_info']);
+        $my_posting = new JobOpening($_GET['title'], $_GET['description']);
+        $my_contact_post = new Contact($_GET['name'], $_GET['phone'], $_GET['email']);
         return "
             <!DOCTYPE html>
             <head>
@@ -53,7 +62,9 @@
                     <h3>Description:</h3>
                     <p>" . $my_posting->getDescription() . "</p>
                     <h3>Contact Info:</h3>
-                    <p>" . $my_posting->getContactInfo() . "</p>
+                    <p>" . $my_contact_post->getName() . "</p>
+                    <p>" . $my_contact_post->getPhoneNumber() . "</p>
+                    <p>" . $my_contact_post->getEmail() . "</p>
                 </div>
             </body>
         ";
