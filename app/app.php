@@ -39,7 +39,7 @@
 
     $app->get("/view_job_board", function() {
         $my_posting = new JobOpening($_GET['title'], $_GET['description'], $_GET['contact_info']);
-        return"
+        return "
             <!DOCTYPE html>
             <head>
                 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>

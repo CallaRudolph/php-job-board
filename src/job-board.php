@@ -3,13 +3,11 @@
     {
         private $title;
         private $description;
-        private $contact_info;
 
-        function __construct($title, $description, $contact_info)
+        function __construct($title, $description)
         {
             $this->title = $title;
             $this->description = $description;
-            $this->contact_info = $contact_info;
         }
 
         // function setTitle($new_title)
@@ -32,16 +30,50 @@
             return $this->description;
         }
 
-        // function setContactInfo($new_contact_info)
-        // {
-        //     $this->contact_info = $new_contact_info;
-        // }
-
-        function getContactInfo()
-        {
-            return $this->contact_info;
-        }
-
     }
 
+    class contact_info
+        {
+            private $name;
+            private $phone_number;
+            private $email;
+
+            function __construct($name, $phone_number, $email)
+            {
+                $this->name = $name;
+                $this->phone_number = $phone_number;
+                $this->email -> $email;
+            }
+
+            // function setName($new_name)
+            // {
+            //     $this->name = $new_name;
+            // }
+
+            function getName()
+            {
+                return $this->name;
+            }
+
+            // function setPhoneNumber($new_phone_number)
+            // {
+            //     $this->phone_number = $new_phone_number;
+            // }
+
+            function getPhoneNumber()
+            {
+                return $this->phone_number;
+            }
+
+            // function setEmail($new_email)
+            // {
+            //     $this->email = $new_email;
+            // }
+
+            function getEmail()
+            {
+                return $this->email;
+            }
+
+    }
  ?>
