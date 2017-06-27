@@ -37,5 +37,27 @@
         ";
     });
 
+    $app->get("/view_job_board", function() {
+        $my_posting = new JobOpening($_GET['title'], $_GET['description'], $_GET['contact_info']);
+        return"
+            <!DOCTYPE html>
+            <head>
+                <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+                <title>View Le'Jobs</title>
+            </head>
+            <body>
+                <div class='container'>
+                    <h2>Job Post</h2>
+                    <h3>Title:</h3>
+                    <p>" . $my_posting->getTitle() . "</p>
+                    <h3>Description:</h3>
+                    <p>" . $my_posting->getDescription() . "</p>
+                    <h3>Contact Info:</h3>
+                    <p>" . $my_posting->getContactInfo() . "</p>
+                </div>
+            </body>
+        ";
+    });
+
     return $app;
 ?>
